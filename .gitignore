@@ -1,0 +1,20 @@
+.DS_Store
+
+# codeigniter 3
+application/cache/*
+!application/cache/index.html
+
+application/ci_sessions/*
+!application/ci_sessions/index.html
+
+application/logs/*
+!application/logs/index.html
+
+!application/*/.htaccess
+
+composer.lock
+
+vendor/
+
+# app settings
+.htaccess
