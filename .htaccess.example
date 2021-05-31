@@ -7,9 +7,9 @@ RewriteRule ^(.*)$ index.php/$1[L]
 SetEnv APP_TZ           America/La_Paz
 setEnv APP_URL          "http://localhost/progreso/cipg"
 setEnv APP_ENV          "production"
-setEnv APP_DB_DRIVER    "mysqli"
+setEnv APP_DB_DSN       "pgsql:host=localhost;port=5432;dbname=db_test"
 setEnv APP_DB_HOST      "127.0.0.1"
-setEnv APP_DB_PORT      "3306"
-setEnv APP_DB_DATABASE  "db_test"
-setEnv APP_DB_USERNAME  "root"
+setEnv APP_DB_USERNAME  "postgres"
 setEnv APP_DB_PASSWORD  "root"
+setEnv APP_DB_DATABASE  "db_test"
+setEnv APP_DB_DRIVER    "pdo"
