@@ -8,5 +8,6 @@
 </head>
 <body>
   <h1>Subir archivo PDF</h1>
+  <?php print_r($productos) ?>
 </body>
 </html>
