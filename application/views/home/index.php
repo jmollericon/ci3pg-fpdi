@@ -14,5 +14,9 @@
     <?php endforeach; ?>
   </ul>
   <h1>Subir archivo PDF</h1>
+  <form action="<?= base_url('home/guardar_pdf') ?>" method="post" enctype="multipart/form-data">
+    <input type="file" name="documento" accept="application/pdf">
+    <button type="submit">Subir PDF</button>
+  </form>
 </body>
 </html>
