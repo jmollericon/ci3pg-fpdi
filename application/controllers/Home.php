@@ -19,7 +19,7 @@ class Home extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['productos'] = $this->HomeModel->getProductos();
+		$data['archivos'] = $this->HomeModel->getArchivos();
 		$this->load->view('home/index', $data);
 	}
 	public function guardar_pdf() {
@@ -38,11 +38,14 @@ class Home extends CI_Controller {
 		redirect(base_url());
 	}
 	public function editar_pdf() {
-		$archivo = "uploads/files/documento_pdf_1622504189.pdf";
+		$archivo_id = base64_decode($_GET['id']);
+		$archivo = $this->HomeModel->getArchivoById($archivo_id);
+
 		$pdf = new Fpdi(); # initiate FPDI
-		$pdf->setSourceFile($archivo); # set the source file
-		$numero_paginas = $this->numero_paginas($archivo);
+		$pdf->setSourceFile($archivo->documento); # set the source file
+		$numero_paginas = $this->numero_paginas($archivo->documento);
 		#echo $numero_paginas;
+
 		for ($i=1; $i<= $numero_paginas; $i++) {
 			$pdf->AddPage(); # add a page
 			$tplId = $pdf->importPage($i); # import page i
